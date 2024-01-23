@@ -25,14 +25,14 @@ function App() {
         let str = "AVCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
         if (numbers) {
-          str += "0123456789"
+            str += "0123456789"
         }
         if (symbols) {
-          str += "!@#$%^&*()?/+_-="
+            str += "!@#$%^&*()?/+_-="
         }
 
         for (var i = 0; i < length; i++) {
-          pwd += str[Math.floor((Math.random() * str.length))]
+            pwd += str[Math.floor((Math.random() * str.length))]
         }
 
         setPassword(pwd)
@@ -49,7 +49,7 @@ function App() {
 
     function handleNumberChange() {
         usenumbers(
-          (prevValue) => { return !prevValue }
+            (prevValue) => { return !prevValue }
         )
     }
 
@@ -60,7 +60,7 @@ function App() {
 
             <div className='container'>
                 <input type="text" name="password" id="password" className='box' value={password} placeholder='Password'
-                      readOnly ref={textRef} />
+                    readOnly ref={textRef} />
 
                 <button className='box' onClick={handleCopyClick}>
                     <FontAwesomeIcon icon={faClipboard} />&nbsp;&nbsp;{copyText}
@@ -69,8 +69,8 @@ function App() {
 
             <div className='changes-container'>
                 <div className='change-element-container'>
-                    <input type="range" name="" id="" min={8} max={15} value={length} 
-                            onChange={(event) => setLength(event.target.value)} />
+                    <input type="range" name="" id="" min={8} max={15} value={length}
+                        onChange={(event) => setLength(event.target.value)} />
 
                     <label htmlFor="">Length : {length}</label>
                 </div>
@@ -79,8 +79,8 @@ function App() {
                     <label htmlFor="">Numbers Allowed</label>
                 </div>
                 <div className='change-element-container'>
-                    <input type="checkbox" name="SymbolAllowed" id="symbols" 
-                            value={symbols} onChange={() => usesymbols((prevValue) => { return !prevValue })} />
+                    <input type="checkbox" name="SymbolAllowed" id="symbols"
+                        value={symbols} onChange={() => usesymbols((prevValue) => { return !prevValue })} />
 
                     <label htmlFor="">Symbols Allowed</label>
                 </div>
